@@ -18,7 +18,7 @@ export const loadUser = () => (dispatch, getState) => {
   dispatch({ type: USER_LOADING });
 
   axios
-    .get("http://localhost:8000/api/auth/user", tokenConfig(getState))
+    .get("https://p4backend-production.up.railway.app/api/auth/user", tokenConfig(getState))
     .then((res) => {
       dispatch({
         type: USER_LOADED,
@@ -45,7 +45,7 @@ export const login = (username, password) => (dispatch) => {
   const body = JSON.stringify({ username, password });
 
   axios
-    .post("http://localhost:8000/api/auth/login", body, config)
+    .post("https://p4backend-production.up.railway.app/api/auth/login", body, config)
     .then((res) => {
       dispatch({
         type: LOGIN_SUCCESS,
@@ -72,7 +72,7 @@ export const register = ({ username, password, email }) => (dispatch) => {
   const body = JSON.stringify({ username, email, password });
 
   axios
-    .post("http://localhost:8000/api/auth/register", body, config)
+    .post("https://p4backend-production.up.railway.app/api/auth/register", body, config)
     .then((res) => {
       dispatch({
         type: REGISTER_SUCCESS,
@@ -89,7 +89,7 @@ export const register = ({ username, password, email }) => (dispatch) => {
 // logout user
 export const logout = () => (dispatch, getState) => {
   axios
-    .post("http://localhost:8000/api/auth/logout", null, tokenConfig(getState))
+    .post("https://p4backend-production.up.railway.app/api/auth/logout", null, tokenConfig(getState))
     .then((res) => {
       dispatch({
         type: LOGOUT_SUCCESS,

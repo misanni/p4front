@@ -7,7 +7,7 @@ import { tokenConfig } from "./auth";
 // Read Blogs
 export const getBlogs = () => (dispatch, getState) => {
   axios
-    .get("http://localhost:8000/api/blogs/", tokenConfig(getState))
+    .get("https://p4backend-production.up.railway.app/api/blogs/", tokenConfig(getState))
     .then((res) => {
       dispatch({
         type: GET_BLOGS,
@@ -20,7 +20,7 @@ export const getBlogs = () => (dispatch, getState) => {
 // Delete Blogs
 export const deleteBlogs = (id) => (dispatch, getState) => {
   axios
-    .delete(`http://localhost:8000/api/blogs/${id}/`, tokenConfig(getState))
+    .delete(`https://p4backend-production.up.railway.app/api/blogs/${id}/`, tokenConfig(getState))
     .then((res) => {
       dispatch({
         type: DELETE_BLOGS,
@@ -33,7 +33,7 @@ export const deleteBlogs = (id) => (dispatch, getState) => {
 // Add Blogs
 export const addBlogs = (blog) => (dispatch, getState) => {
   axios
-    .post("http://localhost:8000/api/blogs/", blog, tokenConfig(getState))
+    .post("hhttps://p4backend-production.up.railway.app/api/blogs/", blog, tokenConfig(getState))
     .then((res) => {
       dispatch({
         type: ADD_BLOGS,
@@ -48,7 +48,7 @@ export const updateBlogs = (id, blog) => (dispatch, getState) => {
   console.log("Action recieved", id, blog);
   axios
     .patch(
-      `http://localhost:8000/api/blogs/${id}/`,
+      `https://p4backend-production.up.railway.app/api/blogs/${id}/`,
       blog,
       tokenConfig(getState)
     )
