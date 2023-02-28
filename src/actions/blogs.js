@@ -33,7 +33,7 @@ export const deleteBlogs = (id) => (dispatch, getState) => {
 // Add Blogs
 export const addBlogs = (blog) => (dispatch, getState) => {
   axios
-    .post("hhttps://p4backend-production.up.railway.app/api/blogs/", blog, tokenConfig(getState))
+    .post("https://p4backend-production.up.railway.app/api/blogs/", blog, tokenConfig(getState))
     .then((res) => {
       dispatch({
         type: ADD_BLOGS,
